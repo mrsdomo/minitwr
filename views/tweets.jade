@@ -1,0 +1,6 @@
+extend layout
+
+block content
+    form(action="/tweets", method="post")
+        textarea(type="text", name="tweetText")
+        button(type="submit") Tweet

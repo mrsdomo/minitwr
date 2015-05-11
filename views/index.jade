@@ -1,0 +1,16 @@
+extends layout
+
+
+block content
+
+  h1 Welcome to Twitter
+
+  div
+    form(action="/tweets", method="post")
+      textarea(type="text", name="tweetText")
+      button(type="submit") Tweet
+
+  div
+    ul
+      - each t in tweets
+        li= t
