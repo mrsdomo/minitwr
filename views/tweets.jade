@@ -1,6 +1,12 @@
-extend layout
-
-block content
-    form(action="/tweets", method="post")
-        textarea(type="text", name="tweetText")
-        button(type="submit") Tweet
+doctype html
+html
+    head(lang='en')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css')
+        meta(charset='UTF-8')
+        link(href='/stylesheets/style.css', rel='stylesheet')
+        title Twitter
+body
+    form(action='/tweets', method='post')
+        textarea(type='text', name='tweetText')
+        button(type='submit') Tweet

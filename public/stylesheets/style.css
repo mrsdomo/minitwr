@@ -1,8 +1,38 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body{
+  background-image: url("https://pp.vk.me/c628216/v628216140/12d0/AxUhare2GQk.jpg");
+  background-color:#2091FF;
+  background-size: 100%;
 }
+textarea { resize: none;}
 
-a {
-  color: #00B7FF;
-}
+.pad { padding: 10px 0px 10px;}
+
+.offset2 {margin-left: 10px;}
+
+[class*="span"] {float: left;min-height: 1px;margin-left: 20px;}
+
+.row-fluid .offset2 {margin-left: 19.148936170212764%;}
+
+.row-fluid .offset2:first-child {margin-left: 17.02127659574468%;}
+
+.row-fluid {width: 98.678414097%;*zoom: 1;padding: 0 1.321585903%;}
+
+.row-fluid:before,.row-fluid:after {display: table;line-height: 0;content: "";}
+
+.row-fluid:after {clear: both;}
+
+.row-fluid [class*="span"] {display: block;float: left;width: 100%;/*min-height: 30px;*/margin-left:3.15186246418338%; *margin-left:2.074468085106383%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+
+.row-fluid [class*="span"]:first-child {margin-left: 0;}
+
+.row-fluid .controls-row [class*="span"] + [class*="span"] {margin-left: 2.127659574468085%;}
+
+.row-fluid .span9 {width: 74.2120343839542%;*width: 74.1642788920726%;}
+
+.row-fluid .span3 {width: 22.6361031518625%;*width: 22.5883476599809%;}
+
+.menu-left {background-color: rgba(255, 255, 255, 0.8);}
+
+.menu-right{background-color: rgba(255, 255, 255, 0.8);}
+
+html, body, .container-fluid, .row-fluid, .menu-left, .menu-right {height:100%;}
