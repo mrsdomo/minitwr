@@ -4,7 +4,6 @@ var router = express.Router();
 var tweets = [];
 
 
-
 router.get('/', function (req, res, next) {
     res.render('index', { tweets: tweets } );
 });
@@ -33,3 +32,6 @@ router.post('/index', function(req, res, next) {
 });
 
 module.exports = router;
+
+
+
