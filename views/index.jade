@@ -5,68 +5,86 @@ html
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css')
     meta(charset='UTF-8')
     link(href='/stylesheets/style.css', rel='stylesheet')
+    link(href='/images/favicon.ico', rel='icon', type='image/x-icon')
+    script(language='JavaScript').
+      pictures = new Array()
+      for (i = 0; i < 10; i++)
+        {
+          pictures[i] = new Image()
+          if (i == 0) pictures[i].src = "/images/girl1.jpg"
+          if (i == 1) pictures[i].src = "/images/girl2.jpg"
+          if (i == 2) pictures[i].src = "/images/girl3.jpg"
+          if (i == 3) pictures[i].src = "/images/girl4.jpg"
+          if (i == 4) pictures[i].src = "/images/girl5.jpg"
+          if (i == 5) pictures[i].src = "/images/boy1.jpg"
+          if (i == 6) pictures[i].src = "/images/boy2.jpg"
+          if (i == 7) pictures[i].src = "/images/boy3.jpg"
+          if (i == 8) pictures[i].src = "/images/boy4.jpg"
+          if (i == 9) pictures[i].src = "/images/boy5.jpg"
+        }
+      function l_image()
+        {
+          document.images[0].src = pictures[document.form1.item.selectedIndex].src
+        }
     title Twitter
 body
-    header.navbar-default(role='banner')
-      .container
-        nav(role='navigation')
-          .container-fluid
-            // Brand and toggle get grouped for better mobile display
-            .navbar-header
-              button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
-                span.sr-only Toggle navigation
-                span.icon-bar
-                span.icon-bar
-                span.icon-bar
-              a.navbar-brand(href='/Welcome') Home
-            // Collect the nav links, forms, and other content for toggling
-            #bs-example-navbar-collapse-1.collapse.navbar-collapse
-              ul.nav.navbar-nav
-                li
-                  a(href='mailto:dinte.maria@gmail.com') Contact
-                li.dropdown
-                  a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') About Us
-                    span.caret
-                  ul.dropdown-menu(role='menu')
-                    li
-                      a(href='#') Action
-                    li
-                      a(href='#') Another action
-                    li
-                      a(href='#') Something else here
-                    li.divider
-                    li
-                      a(href='#') Separated link
-                    li.divider
-                    li
-                      a(href='#') One more separated link
-            // /.navbar-collapse
-          // /.container-fluid
-    .container-fluid
-      .row-fluid
-        .span3.menu-left  test1
-        .span9.menu-right
-           form.form(action='/tweets', method='post')
-             h2  New Tweet
-             textarea.form-control(align='center',type='text', rows='5', maxlength='140', name='tweetText', placeholder='Enter your text here...')
-             .pad(align='center')
-                button.btn.btn-default(align='center', type='submit') Tweet
-             table.table.table-striped
-                tr
-                  th(width='55%') Message
-                  th(width='25%') Nickname
-                  th(width='20%') Date
-                tr
-                  td(width='55%') Hi! This is my first tweet! ;)
-                  td(width='25%') mrsdomo
-                  td(width='20%')
-                   //помен€й это. надо сделать чтоб показывало текующую дату. просмотри файл javascript
-                    p #date
-                tr
-                  td(width='55%')
-                    - each t in tweets
-                      li= t
+  header.navbar-default(role='banner')
+    .container
+      nav(role='navigation')
+        .container-fluid
+          // Brand and toggle get grouped for better mobile display
+          .navbar-header
+            button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='/Welcome') Home
+          // Collect the nav links, forms, and other content for toggling
+          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+            ul.nav.navbar-nav
+              li
+                a(href='mailto:dinte.maria@gmail.com') Contact
+          // /.navbar-collapse
+        // /.container-fluid
+  .container-fluid
+    .row-fluid
+      .span3.menu-left
+        table(width='100%')
+          tr
+            th(align='center')
+              .bs-example(align='center')
+                img.img-circle(src='/images/girl1.jpg', name='tool', alt='Circular Image')
+          tr
+            th
+              form(name='form1', align='center')
+                select(name='item', onchange='l_image()')
+                  option(selected='') girl 1
+                  option girl 2
+                  option girl 3
+                  option girl 4
+                  option girl 5
+                  option boy 1
+                  option boy 2
+                  option boy 3
+                  option boy 4
+                  option boy 5
+      .span9.menu-right
+        form.form(action='/tweets', method='post')
+          h2  New Tweet
+          textarea.form-control(align='center',type='text', rows='5', maxlength='140', name='tweetText', placeholder='Enter your text...')
+          .pad(align='center')
+            button.btn.btn-default(align='center', type='submit') Tweet
+          table.table.table-striped
+            tr
+              th(width='100%') Message
+            tr
+              td(width='100%')
+                - each t in tweets
+                  li= t
+            tr
+              td(width='100%') Hi! This is my first tweet! ;)
 
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
 script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
-script(src='/public/javascripts/date.js')
+                                                                                                
